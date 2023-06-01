@@ -27,7 +27,7 @@ const Feed = () => {
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {  
-    const response = await fetch("/api/prompt", { cache: "reload"});  
+    const response = await fetch("/api/prompt?_vercel_no_cache=1", { cache: "no-store"});  
     const data = await response.json();  
     console.log(data)
     setAllPosts(data);  

@@ -9,7 +9,7 @@ export const GET = async (request) => {
         return new Response(JSON.stringify(prompts), { 
             status: 200,
             headers: {
-                'Cache-Control': 'private, no-store, no-cache, s-maxage=1'
+                'Cache-Control': 'private, no-store, no-cache, s-maxage=0, must-revalidate, proxy-revalidate'
             }
         })
     } catch (error) {
