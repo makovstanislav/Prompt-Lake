@@ -27,11 +27,7 @@ const Feed = () => {
   const [searchedResults, setSearchedResults] = useState([]);
 
   const fetchPosts = async () => {  
-    const response = await fetch("/api/prompt", { 
-      headers: {
-        'Cache-Control': 'no-store'
-      }
-    });  
+    const response = await fetch("/api/prompt");  
     const data = await response.json();  
     setAllPosts(data);  
   };    
