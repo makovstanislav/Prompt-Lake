@@ -8,9 +8,9 @@ export const GET = async (request) => {
         const prompts = await Prompt.find({}).populate('creator')
         return new Response(JSON.stringify(prompts), { 
             status: 200,
-           /*  headers: {
-                'Cache-Control': 'private, no-store, no-cache'
-            } */
+            headers: {
+                'Cache-Control': 'private'
+            }
         })
     } catch (error) {
         console.log(error)
