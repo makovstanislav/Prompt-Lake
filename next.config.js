@@ -1,6 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  
+  reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "private, no-store, no-cache",
+          },
+        ],
+      },
+    ];
+  },
     experimental: {
       serverComponentsExternalPackages: ["mongoose"],
     },
