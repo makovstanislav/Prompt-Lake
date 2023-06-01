@@ -26,12 +26,15 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  const fetchPosts = async () => {
-    const response = await fetch("/api/prompt", { cache: 'no-store', next: { revalidate: 0 } });
-    const data = await response.json();
-
-    setAllPosts(data);
-  };
+  const fetchPosts = async () => {  
+    const response = await fetch("/api/prompt", { 
+      headers: {
+        'Cache-Control': 'no-store'
+      }
+    });  
+    const data = await response.json();  
+    setAllPosts(data);  
+  };    
 
   useEffect(() => {
     fetchPosts();
