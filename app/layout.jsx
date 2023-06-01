@@ -8,6 +8,8 @@ export const metadata = {
     description: "Discover & Share AI prompts"
 }
 
+export const dynamic = 'force-dynamic';
+
 const RootLayout = ({ children }) => {
 
     return (
