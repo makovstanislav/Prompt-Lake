@@ -26,7 +26,7 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  /* const fetchPosts = async () => {  
+  const fetchPosts = async () => {  
     const response = await fetch("/api/prompt", { cache: 'no-store' });  
     const data = await response.json();  
     console.log(data)
@@ -35,7 +35,7 @@ const Feed = () => {
 
   useEffect(() => {
     fetchPosts();
-  }, []); */
+  }, []);
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
