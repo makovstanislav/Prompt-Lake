@@ -1,4 +1,5 @@
 import Feed from "@components/Feed"
+export const revalidate = 0;
 
 const Home = () => {
   return (
