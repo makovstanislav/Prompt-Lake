@@ -1,4 +1,5 @@
 import Feed from "@components/Feed"
+export const dynamic = 'force-dynamic'
 
 const Home = () => {
   return (
