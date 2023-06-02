@@ -1,5 +1,14 @@
 import Feed from "@components/Feed"
-export const revalidate = 0;
+
+export async function getServerSideProps() {
+   const response = await fetch(`${process.env.NEXT_PUBLIC_VERCEL_URL}/api/prompt`);
+   const data = await response.json();
+ 
+   return {
+     props: { data }, // will be passed to the page component as props
+   }
+ }
+ 
 
 const Home = () => {
   return (
