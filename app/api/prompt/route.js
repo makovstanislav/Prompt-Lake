@@ -9,7 +9,7 @@ export const GET = async (request) => {
         return new Response(JSON.stringify(prompts), { 
             status: 200,
             headers: {
-                'Cache-Control': 's-maxage=1, stale-while-revalidate'
+                'Cache-Control': 'no-store'
             }
         })
     } catch (error) {
