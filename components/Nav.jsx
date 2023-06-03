@@ -24,8 +24,8 @@ const Nav = () => {
         <Image
           src='/assets/images/logo.png'
           alt='logo'
-          width={70}
-          height={70}
+          width={30}
+          height={30}
           className='object-contain'
         />
         <p className='logo_text'>promptlake</p>
