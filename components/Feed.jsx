@@ -28,8 +28,7 @@ export default function Feed ({ prompts }) {
   const [searchedResults, setSearchedResults] = useState([]);
 
   useEffect(() => {
-/*     console.log(prompts)
- */    setAllPosts(prompts)
+    setAllPosts(prompts)
   }, [])
 
 
