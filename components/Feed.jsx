@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import PromptCard from "./PromptCard";
 
 const PromptCardList = ({ data, handleTagClick }) => {
-  console.log(data)
   return (
     <div className='mt-16 prompt_layout'>
       {data.map((post) => (
@@ -29,8 +28,8 @@ export default function Feed ({ prompts }) {
   const [searchedResults, setSearchedResults] = useState([]);
 
   useEffect(() => {
-    console.log("Use effect 🇨🇭🇨🇭🇨🇭🇨🇭🇨🇭🇨🇭")
-    setAllPosts(prompts)
+/*     console.log(prompts)
+ */    setAllPosts(prompts)
   }, [])
 
 
