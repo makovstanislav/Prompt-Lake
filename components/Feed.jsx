@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 import PromptCard from "./PromptCard";
 
-export const fetchCache='force-no-store'
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -20,7 +19,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
   );
 };
 
-const Feed = () => {
+export default function Feed ({ prompts }) {
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
@@ -28,16 +27,9 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  const fetchPosts = async () => {  
-    const response = await fetch("/api/prompt", { cache: 'no-store' });  
-    const data = await response.json();  
-    console.log(data)
-    setAllPosts(data);  
-  };    
-
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    setAllPosts(prompts)
+  }, [])
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
@@ -95,4 +87,3 @@ const Feed = () => {
   );
 };
 
-export default Feed;
