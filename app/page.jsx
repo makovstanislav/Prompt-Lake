@@ -5,7 +5,7 @@ import { connectToDB } from "@utils/database";
 
 
 export default async function Home() {
-   const res = await fetch('process.env.NEXT_PUBLIC_API_URL/api/prompt', { cache: 'no-store' })
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, { cache: 'no-store' })
    const prompts = await res.json()
    console.log(prompts)
 
