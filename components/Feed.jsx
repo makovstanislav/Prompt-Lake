@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 
 import PromptCard from "./PromptCard";
 
-
 const PromptCardList = ({ data, handleTagClick }) => {
+  console.log(data)
   return (
     <div className='mt-16 prompt_layout'>
       {data.map((post) => (
@@ -20,6 +20,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 
 export default function Feed ({ prompts }) {
+
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
@@ -28,6 +29,7 @@ export default function Feed ({ prompts }) {
   const [searchedResults, setSearchedResults] = useState([]);
 
   useEffect(() => {
+    console.log("Use effect 🇨🇭🇨🇭🇨🇭🇨🇭🇨🇭🇨🇭")
     setAllPosts(prompts)
   }, [])
 
@@ -82,7 +84,10 @@ export default function Feed ({ prompts }) {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        <PromptCardList 
+          data={prompts} 
+          handleTagClick={handleTagClick} 
+        />
       )}
     </section>
   );
