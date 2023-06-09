@@ -1,7 +1,5 @@
 import Feed from "@components/Feed"
 
-
-
 export default async function Home() {
    async function getPrompts() {  
       const response = await fetch("http://localhost:3000/api/prompt", { cache: 'no-store' });  
@@ -34,3 +32,4 @@ export default async function Home() {
       </section>
    )
 }
+
