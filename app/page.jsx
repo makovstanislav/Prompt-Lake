@@ -3,7 +3,7 @@ import Feed from "@components/Feed"
 export default async function Home() {
    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, { 
       next: {
-         revalidate: 5
+         revalidate: 0
       }
    })
    const prompts = await res.json()
