@@ -19,6 +19,7 @@ const PromptCardList = ({ data, handleTagClick }) => {
 };
 
 export default function Feed ({ prompts }) {
+
   const [allPosts, setAllPosts] = useState([]);
 
   // Search states
@@ -26,11 +27,11 @@ export default function Feed ({ prompts }) {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  
-
   useEffect(() => {
-    setAllPosts(prompts);
-  }, []);
+/*     console.log(prompts)
+ */    setAllPosts(prompts)
+  }, [])
+
 
   const filterPrompts = (searchtext) => {
     const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
@@ -82,7 +83,10 @@ export default function Feed ({ prompts }) {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        <PromptCardList 
+          data={prompts} 
+          handleTagClick={handleTagClick} 
+        />
       )}
     </section>
   );
