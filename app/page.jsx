@@ -1,4 +1,5 @@
 import Feed from "@components/Feed"
+export const revalidate = 0
 
 export default async function Home() {
    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, { 
