@@ -1,6 +1,6 @@
 # Prompt Lake
 
-This is a web-application where everyone can publish useful ChatGPT prompts
+This is my study project: a web-application where everyone can publish useful ChatGPT prompts. 
 
 
 ## 1. Technologies Used
