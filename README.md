@@ -59,9 +59,9 @@ This is a web-application where everyone can publish useful ChatGPT prompts
 
 The easiest way to deploy this Next.js application is by using the Vercel Platform, created by the makers of Next.js. Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for detailed instructions. 
 
-If you use Vercel, please change values of `NEXTAUTH_URL` and `NEXTAUTH_URL_INTERNAL` to yourapp.vercel.app in "Environment variables" tab in the project settings on Vercel dashboard.
+If you use Vercel, please change values of `NEXTAUTH_URL`, `NEXTAUTH_URL_INTERNAL` and 'NEXT_PUBLIC_API_URL' to yourapp.vercel.app in "Environment variables" tab in the project settings on Vercel dashboard.
 
 
 ## 4. Possible issues
 
-- The feed on the homepage might not load the first time. User has to refresh the page.
+- The feed on the homepage might show stale data https://github.com/makovstanislav/prompt-lake/issues/6#issue-1751023834 
