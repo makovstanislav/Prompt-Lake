@@ -1,5 +1,5 @@
 import Feed from "@components/Feed"
-export const dynamic = "force-dynamic"
+export const fetchCache = 'force-no-store'
 
 export default async function Home() {
    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, { 
