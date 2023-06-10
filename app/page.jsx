@@ -1,12 +1,14 @@
 import Feed from "@components/Feed"
-export const fetchCache = 'force-no-store'
+import { headers } from 'next/headers'
+
+
+
 
 export default async function Home() {
-   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, { 
-      next: {
-         revalidate: 0,
-         cache: 'no-store'
-      }
+   const headersInstance = headers()
+   const authorization = headersInstance.get('authorization')
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/prompt`, {
+      headers: { authorization },
    })
    const prompts = await res.json()
    console.log(prompts)
